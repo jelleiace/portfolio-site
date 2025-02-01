@@ -1,20 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     margin: 0;
-}
-
-.bg{
-    background-color: #C0CBBB
+    padding: 0;
+    background-color: #FFF6E9;
+    font-family: "Red Hat Text", serif;
+    overflow-x: hidden;
 }
 
 /* header start */
 header{
-    background-color: #EBEBEB;
+    background-color: #AE445A;
     width: 100%;
     height: 100px;
+    flex-wrap: wrap;
+    backdrop-filter: blur(15px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    margin: auto;
+    z-index: 1;
 }
 
 .name{
@@ -22,29 +32,336 @@ header{
     float: left;
     padding-left: 100px;
     font-size: 30px;
+    font-weight: bold;
+    color: #E8BCB9;
 }
 
 .navbar{
+    padding-right: 100px;
+    padding-top: 25px;
+}
+
+.navbar ul{
+    list-style: none;
     display: flex;
     justify-content: flex-end;
-    padding-right: 100px;
-    padding-top: 10px;
 }
 
-.navmenu{
-    list-style: none;
+.navbar a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #E8BCB9;
+    padding: 0 30px;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    width: auto;
+}
+    
+.navbar a:hover{
+    background-color: #4B4376;
+    text-decoration: none;
 }
 
-.navmenu li{
-    padding: 10px;
-    float: left;
+#contactButton{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #C8ACD6;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    margin-top: 16px;
+    color: #432E54;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#contactButton:hover{
+    background-color: #4B4376;
+    color: #C8ACD6;
+    cursor: pointer;
 }
 /* header end */
 
 
 /* intro start */
 .intro-section{
-    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    padding-top: 170px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10rem; /* sets space between image and text */
+    margin: 0 auto;
 }
 
+.intro-image-container img{
+    width: 100%;
+    max-width: 500%;
+    object-fit: cover;
+    vertical-align: middle; 
+    height: 400px;   
+}
+
+.intro-text-container{
+    flex: 1;
+    text-align: center;
+}
+
+.intro-text-container h2{
+    color: #432E54;
+    font-size: 50px;
+}
+
+.intro-text-container p{
+    font-size: 20px;
+}
+
+.desc1{
+    color: #AE445A;
+    font-weight: bold;
+}
+
+.desc2{
+    color: #AE445A;
+    font-weight: bold;
+}
+
+.intro-contacts{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+.intro-contacts img{
+    width: 50px;
+    height: 30px;
+    aspect-ratio: 3/2; 
+    object-fit: contain;
+}
+
+.stophiding{
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
 /* intro end */
+
+/* technologies start */
+.tech-space{
+    height: 160px;
+}
+
+.tech-section{
+    text-align: center;
+}
+
+.tech-section h1{
+    color: #432E54;
+}
+
+.tech-slider{
+    background-color: #6A669D;
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide{
+    justify-content: center;
+    background-color: #FFCBCB;
+    padding: 10px;
+}
+
+.slide-track{
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll 40s linear infinite;
+}
+
+.slide-track:hover{
+    animation-play-state: paused;
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px*9));
+    }
+}
+
+.slide{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    perspective: 100px;
+}
+
+img{
+    width: 60%;
+    transition: transform 1s;
+}
+
+img:hover{
+    transform: translateZ(20px);
+}
+
+/* .tech-slider::before,
+.tech-slider::after{
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%,
+    rgba(255,255,255,0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+.tech-slider::before{
+    left: 0;
+    top: 0;
+}
+
+.tech-slider::after{
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+} */
+/* technologies end */
+
+/* projects start */
+.proj-space{
+    height: 150px;
+}
+
+.proj-section{
+    text-align: center;
+}
+
+.proj-section h1{
+    color: #432E54;
+}
+
+.proj-cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.card{
+    width: 400px;
+    background-color:#C8ACD6;
+    border-radius: 8px;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+    margin: 20px;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 10px 2px #242424;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2; 
+    object-fit: contain; /*aspect and object help make the images same size*/
+}
+
+.card-content{
+    padding: 20px;
+}
+
+.card-content h3{
+    font-size: 20px;
+    font-style: oblique;
+    color: #AE445A;
+    margin-bottom: 8px;
+}
+
+.card-content p{
+    color: #432E54;
+    font-size: 15px;
+    line-height: 1.3;
+}
+/* projects end */
+
+/* contact start */
+.contact-section{
+    text-align: center;
+}
+
+.contact-section h1{
+    color: #432E54;
+}
+
+/* From Uiverse.io by Yaya12085 */ 
+.form {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+  }
+    
+  .form input {
+    outline: 0;
+    border: 1px solid rgb(219, 213, 213);
+    padding: 8px 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 50px;
+  }
+  
+  .form textarea {
+    border-radius: 8px;
+    height: 100px;
+    width: 100%;
+    resize: none;
+    outline: 0;
+    padding: 8px 0;
+    border: 1px solid rgb(219, 213, 213);
+  }
+  
+  .form button {
+    align-self: center;
+    padding: 8px;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #C8ACD6;
+    color: #432E54;
+    cursor: pointer;
+  }
+
+  .form button:hover{
+    background-color: #4B4376;
+    color: #C8ACD6;
+  }
+/* contact end */
+
+footer{
+    height: 150px;
+    color: antiquewhite;
+    background-color: antiquewhite;
+}
